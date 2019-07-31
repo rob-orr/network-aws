@@ -181,7 +181,7 @@ resource "aws_security_group_rule" "ssh" {
   protocol          = "tcp"
   from_port         = 22
   to_port           = 22
-  cidr_blocks       = ["0.0.0.0/0"]
+  cidr_blocks       = "${var.sg_cidrs_public}"
 }
 
 resource "aws_security_group_rule" "egress_public" {
