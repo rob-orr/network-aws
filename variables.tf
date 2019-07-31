@@ -29,6 +29,12 @@ variable "vpc_cidrs_public" {
   default     = ["10.139.1.0/24", "10.139.2.0/24", "10.139.3.0/24",]
 }
 
+variable "sg_cidrs_public" {
+  description = "CIDR block for the security group for the bastion host(s)."
+  type        = "list"
+  default     = ["0.0.0.0/0"]
+}
+
 variable "nat_count" {
   description = "Number of NAT gateways to provision across public subnets, defaults to public subnet count."
   default     = -1
